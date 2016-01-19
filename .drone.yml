@@ -27,3 +27,4 @@ notify:
     server:
       host: irc.oftc.net
       port: 6667
+
