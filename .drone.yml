@@ -1,0 +1,29 @@
+debug: true
+
+build:
+  image: fracting/msys32-docker:local
+  shell: /usr/bin/msys2-shell
+  commands:
+    - pacman -S --noconfirm --needed subversion git
+    - svn co https://github.com/Alexpux/MSYS2-packages/trunk/gcc
+    - cd gcc
+    - git config --global user.email "fracting@gmail.com"
+    - git config --global user.name "Qian Hong"
+    - makepkg -s -f --noconfirm --skippgpcheck
+
+notify:
+  irc:
+    prefix: build
+    nick: gcc
+    channel: wine-zh
+    server:
+      host: chat.freenode.net
+      port: 6667
+
+  irc:
+    prefix: build
+    nick: gcc
+    channel: msys2
+    server:
+      host: irc.oftc.net
+      port: 6667
