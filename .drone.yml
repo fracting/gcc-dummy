@@ -1,7 +1,5 @@
-debug: true
-
 build:
-  image: fracting/msys32-docker:local
+  image: fracting/msys32
   shell: msys32
   commands:
     - pacman -S --noconfirm --needed subversion git
@@ -27,4 +25,3 @@ notify:
     server:
       host: irc.oftc.net
       port: 6667
-
