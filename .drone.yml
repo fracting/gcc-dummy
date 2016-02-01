@@ -2,8 +2,7 @@ debug: true
 
 build:
   image: fracting/msys32-docker:local
-  shell: /usr/bin/msys2-shell
-# platform: msys2
+  shell: msys32
   commands:
     - pacman -S --noconfirm --needed subversion git
     - svn co https://github.com/Alexpux/MSYS2-packages/trunk/gcc
